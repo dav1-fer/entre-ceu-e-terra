@@ -160,10 +160,11 @@ main{
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
     z-index: 99; /* Make sure it’s on top */
+    background-color: rgba(0, 0, 0, 0.8);
+    -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(40px); 
 }
-
 /* Popup content */
 .popup-content{
     position: relative;
@@ -185,7 +186,7 @@ main{
     top: 16px;
     right: 16px;
     color: #fff;
-    font-size: 32px;
+    font-size: 40px;
     cursor: pointer;
     z-index: 100;
 }
