@@ -107,14 +107,14 @@ main{
     filter: saturate(0);
 }
 .image-1{
-    top: 80px;
+    top: 64px;
     left: 400px;
 }
 .image-1 img{
     width: 170px;
 }
 .image-2{
-    top: 96px;
+    top: 120px;
     left: 60px;
 }
 .image-2 img{
@@ -128,14 +128,14 @@ main{
     width: 320px;
 }
 .image-4{
-    top: 64px;
-    left: 632px;
+    top: 48px;
+    right: 400px;
 }
 .image-4 img{
     width: 462px;
 }
 .image-5{
-    top: 400px;
+    top: 360px;
     left: 480px;
 }
 .image-5 img{
@@ -147,6 +147,13 @@ main{
 }
 .image-6 img{
     width: 230px;
+}
+.image-7{
+    top: 408px;
+    right: 40px;
+}
+.image-7 img{
+    width: 488px;
 }
 
 
@@ -191,7 +198,7 @@ main{
     z-index: 100;
 }
 .image-frame img {
-    filter: saturate(0);
+    /* filter: saturate(0); disable comment for BW popUpImage */
     opacity: 0.6;
     object-fit: cover;
     width: 100%;
