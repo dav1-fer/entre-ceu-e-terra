@@ -14,7 +14,7 @@
         <nav>
             <span class="show-web">
                 <i class="fa-regular fa-eye"></i>
-                <p>Mostrar conexões</p>
+                <p>Mostrar/Esconder conexões</p>
             </span>
             <h1>Entre Céu e Terra:<br>O Diálogo do Racional com o Divino</h1>
             <div class="info-guide">
@@ -24,13 +24,14 @@
                 </span>
                 <span class="instruction">
                     <i class="fa-solid fa-circle-info"></i>
-                    <p>Duplo Clique para Info</p>
+                    <p>Duplo Clique na Imagem para Info</p>
                 </span>
             </div>
         </nav>
     </header>
       
     <main>
+        <canvas id="web-canvas"></canvas>
         <!-- interactive content here -->
         <div class="image-card image-1">
             <img src="assets/image-1.jpg">
@@ -39,7 +40,7 @@
             <img src="assets/image-2.jpg">
         </div>
         <div class="image-card image-3">
-            <img src="assets/image-3.jpg">
+            <img src="assets/image-3.webp">
         </div>
         <div class="image-card image-4">
             <img src="assets/image-4.jpg">
@@ -51,7 +52,23 @@
             <img src="assets/image-6.jpg">
         </div>
     </main>
-
+    <div id="info-popup" class="popup"> <!-- pop-up blur background  -->
+        <div class="popup-content">
+            <div class="image-frame">
+                <span class="close-btn">&times;</span>
+                <img id="popup-image" src="" alt="Popup Image">
+            </div>
+            <div class="content-frame">
+                <h2 id="popup-title">A Redenção e o Sofrimento</h2>
+                <p><strong>Obra:</strong> <span id="popup-work">A Deposição de Cristo</span></p>
+                <p><strong>Autor:</strong> <span id="popup-author">Rogier van der Weyden</span></p>
+                <p><strong>Data de Criação:</strong> <span id="popup-date">Cerca de 1435</span></p>
+                <p><strong>Material:</strong> <span id="popup-material">Óleo sobre painel de madeira</span></p>
+                <p><strong>Técnica:</strong> <span id="popup-technique">Pintura a óleo</span></p>
+                <p><strong>Descrição:</strong> <span id="popup-description">Esta pintura é um dos grandes exemplos da pintura flamenga...</span></p>
+            </div>
+        </div>
+    </div>
     <footer>
         <div class="left-content">
             <img src="assets/logo-ipl.png" alt="logótipo politécnico de leiria">
@@ -64,6 +81,6 @@
             </a>
         </div>
     </footer>
+    <script src="main.js"></script>
 </body>
-<script src="main.js"></script>
 </html>
