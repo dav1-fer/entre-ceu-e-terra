@@ -140,8 +140,9 @@ const popupCards = document.querySelectorAll(".image-card"); // Select cards spe
 const imageData = {
     "image-1": {
         title: "A Natureza e o Homem",
-        work: "Estudo de Proporções do Homem (Homem Vitruviano) de Leonardo da Vinci",
         subtitle: "O Homem como Medida do Mundo",
+        work: "Estudo de Proporções do Homem (Homem Vitruviano)",
+        author: "Leonardo da Vinci",
         date: "cerca de 1490",
         material: "Tinta e papel",
         technique: "Desenho à tinta e lavis (técnica de sombreado)",
@@ -149,8 +150,9 @@ const imageData = {
     },
     "image-2": {
         title: "A Razão e o Universo",
-        work: "A Escola de Atenas de Rafael",
         subtitle: "A Razão como Reflexo da Harmonia Universal",
+        work: "A Escola de Atenas",
+        author: "Rafael",
         date: "entre 1509-1511",
         material: "Tinta de fresco sobre reboco",
         technique: "Pintura a fresco",
@@ -158,8 +160,9 @@ const imageData = {
     },
     "image-3": {
         title: "O Homem e a Geometria Sagrada",
-        work: "A Flagelação de Cristo",
         subtitle: "A Geometria como Refúgio do Divino no Racional",
+        work: "A Flagelação de Cristo",
+        author: "Piero della Francesca",
         date: "entre 1455-1460",
         material: "Têmpera e madeira",
         technique: "Pintura em têmpera",
@@ -167,8 +170,9 @@ const imageData = {
     },
     "image-4": {
         title: "O Divino e a Criação",
-        work: "A Criação de Adão de Michelangelo",
         subtitle: "O Toque de Deus e o Despertar da Razão",
+        work: "A Criação de Adão",
+        author: "Michelangelo",
         date: "cerca de 1511",
         material: "Tinta de fresco sobre reboco",
         technique: "Pintura a fresco",
@@ -176,8 +180,9 @@ const imageData = {
     },
     "image-5": {
         title: "A Redenção e o Sofrimento",
-        work: "A Deposição de Cristo de Rogier van der Weyden",
         subtitle: "O Sofrimento Humano como Caminho de Conexão ao Divino",
+        work: "A Deposição de Cristo",
+        author: "Rogier van der Weyden",
         date: "entre 1435-1438",
         material: "Óleo sobre painel de madeira",
         technique: "Pintura a óleo",
@@ -185,8 +190,9 @@ const imageData = {
     },
     "image-6": {
         title: "A Luz e a Sombra",
-        work: "A Vocação de São Mateus de Caravaggio",
         subtitle: "O Chamado ao Conhecimento Espiritual",
+        work: "A Vocação de São Mateus",
+        author: "Caravaggio",
         date: "cerca de 1600",
         material: "Óleo sobre tela",
         technique: "Pintura a óleo",
@@ -194,8 +200,9 @@ const imageData = {
     },
     "image-7": {
         title: "A Harmonia entre o Céu e a Terra",
-        work: "O Jardim das Delícias de Hieronymus Bosch",
         subtitle: "O Paradigma do Prazer e a Busca pelo Divino",
+        work: "O Jardim das Delícias",
+        author: "Hieronymus Bosch",
         date: "entre 1490-1510",
         material: "Óleo sobre painel de madeira",
         technique: "Pintura a óleo",
@@ -213,8 +220,9 @@ popupCards.forEach(card => {
         if (data) {
             document.getElementById("popup-image").src = card.querySelector("img").src;
             document.getElementById("popup-title").textContent = data.title;
-            document.getElementById("popup-work").textContent = data.work;
             document.getElementById("popup-subtitle").textContent = data.subtitle;
+            document.getElementById("popup-work").textContent = data.work;
+            document.getElementById("popup-author").textContent = data.author;
             document.getElementById("popup-date").textContent = data.date;
             document.getElementById("popup-material").textContent = data.material;
             document.getElementById("popup-technique").textContent = data.technique;
