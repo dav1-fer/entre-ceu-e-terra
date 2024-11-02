@@ -12,15 +12,12 @@ canvas.width = main.clientWidth;
 canvas.height = main.clientHeight;
 
 // Toggle connection lines on/off
-
 showWebBtn.addEventListener('click', () => {
     showConnections = !showConnections; // Alterna o estado das conexões
     drawConnections(); // Redesenha as conexões de acordo com o novo estado
 
-    // Alterna o texto e o ícone
     const icon = showWebBtn.querySelector('i');
     const text = showWebBtn.querySelector('p');
-
     if (showConnections) {
         icon.classList.replace("fa-eye", "fa-eye-slash"); // Olho aberto
         text.textContent = "Esconder conexões";
@@ -123,10 +120,7 @@ cards.forEach(card => {
     }
 });
 
-// Start the line animation loop
 animateLines();
-
-
 
 
 // ----- POP-UP FEATURE -------
@@ -135,7 +129,6 @@ animateLines();
 const popup = document.getElementById("info-popup");
 const closeBtn = document.querySelector(".close-btn");
 const popupCards = document.querySelectorAll(".image-card"); // Select cards specifically for popup
-
 // Popup content data
 const imageData = {
     "image-1": {
@@ -214,7 +207,6 @@ const imageData = {
 popupCards.forEach(card => {
     card.addEventListener("dblclick", () => {
         const cardId = card.dataset.id; // Use the data-id to fetch data
-
         // Populate popup with data from imageData based on card ID
         const data = imageData[cardId];
         if (data) {
@@ -228,7 +220,6 @@ popupCards.forEach(card => {
             document.getElementById("popup-technique").textContent = data.technique;
             document.getElementById("popup-description").textContent = data.description;
         }
-
         // Show popup
         popup.style.display = "flex";
     });
@@ -238,7 +229,6 @@ popupCards.forEach(card => {
 closeBtn.addEventListener("click", () => {
     popup.style.display = "none";
 });
-
 // Close popup when clicking outside the popup content
 window.addEventListener("click", (event) => {
     if (event.target === popup) {

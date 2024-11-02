@@ -67,6 +67,9 @@ h1{
 .show-web:hover .fa-eye{
     color: var(--grey-200);
 }
+.show-web:hover .fa-eye-slash{
+    color: var(--grey-200);
+}
 .show-web:hover p{
     color: var(--grey-200);
 }
