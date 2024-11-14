@@ -4,25 +4,25 @@ const main = document.querySelector('main');
 const cards = document.querySelectorAll(".image-card");
 const canvas = document.getElementById("web-canvas");
 const ctx = canvas.getContext("2d");
-let showConnections = false; // Toggle for showing connections
+let showConnections = false; // Toggle show-connections
 const showWebBtn = document.querySelector(".show-web");
 
-// Set initial canvas dimensions
+// Initial canvas dimensions
 canvas.width = main.clientWidth;
 canvas.height = main.clientHeight;
 
 // Toggle connection lines on/off
 showWebBtn.addEventListener('click', () => {
-    showConnections = !showConnections; // Alterna o estado das conexões
-    drawConnections(); // Redesenha as conexões de acordo com o novo estado
+    showConnections = !showConnections; // Changes connections state
+    drawConnections(); // Redraws lines according to connection state
 
     const icon = showWebBtn.querySelector('i');
     const text = showWebBtn.querySelector('p');
     if (showConnections) {
-        icon.classList.replace("fa-eye", "fa-eye-slash"); // Olho aberto
+        icon.classList.replace("fa-eye", "fa-eye-slash"); // Eye open
         text.textContent = "Esconder conexões";
     } else {
-        icon.classList.replace("fa-eye-slash", "fa-eye"); // Olho fechado
+        icon.classList.replace("fa-eye-slash", "fa-eye"); // Eye closed
         text.textContent = "Mostrar conexões";
     }
 });
@@ -31,7 +31,7 @@ showWebBtn.addEventListener('click', () => {
 function resizeCanvas() {
     canvas.width = main.clientWidth;
     canvas.height = main.clientHeight;
-    drawConnections(); // Redraw lines on resize
+    drawConnections();
 }
 
 // Function to draw connection lines
@@ -39,14 +39,14 @@ function drawConnections() {
     ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
 
     if (!showConnections) return; // Skip if connections are off
-
+    
+    // Connection lines appearance 
     ctx.strokeStyle = "#D8C21B";
     ctx.setLineDash([8, 8]);
     ctx.lineWidth = 1.5;
     ctx.lineDashOffset = dashOffset;
 
     const mainRect = main.getBoundingClientRect();
-
     for (let i = 0; i < cards.length; i++) {
         for (let j = i + 1; j < cards.length; j++) {
             const rectA = cards[i].getBoundingClientRect();
@@ -75,7 +75,7 @@ function animateLines() {
 // Resize listener to adjust canvas on window resize
 window.addEventListener('resize', resizeCanvas);
 
-// Dragging functionality for each image card
+// Dragging functionality for each card
 cards.forEach(card => {
     card.addEventListener('mousedown', mouseDown);
 
@@ -125,10 +125,10 @@ animateLines();
 
 // ----- POP-UP FEATURE -------
 
-// Variables for popup functionality
 const popup = document.getElementById("info-popup");
 const closeBtn = document.querySelector(".close-btn");
 const popupCards = document.querySelectorAll(".image-card"); // Select cards specifically for popup
+
 // Popup content data
 const imageData = {
     "image-1": {
@@ -206,7 +206,7 @@ const imageData = {
 // Set up event listeners for each popup card
 popupCards.forEach(card => {
     card.addEventListener("dblclick", () => {
-        const cardId = card.dataset.id; // Use the data-id to fetch data
+        const cardId = card.dataset.id;
         // Populate popup with data from imageData based on card ID
         const data = imageData[cardId];
         if (data) {
